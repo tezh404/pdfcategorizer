@@ -2,7 +2,7 @@
 
 This project contains **two separate Python modules**:
 
-1. **Categorizer** – Reads the pages of a PDF file up to the desired number of pages., extracts text and metadata, and uses an LLM API to generate a category (e.g., "Engineering", "Computer").
+1. **Categorizer** – Reads the pages of a PDF file up to the desired number of pages., extracts text and metadata, and uses an LLM API to generate a category (e.g., "Engineering", "Computer"). You can improve the model's categorization by tweaking the prompt.
 2. **Organizer** – Organizes your PDF files into folders based on the predicted category from a generated JSON file.
 
 ---
