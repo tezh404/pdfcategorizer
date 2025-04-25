@@ -91,5 +91,5 @@ This will create `pdf_file_info.json`.
 3. **Run the organizer:**
 
 ```bash
-python organize_by_category.py
+python Organizer.py
 ```
