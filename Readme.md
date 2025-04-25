@@ -73,7 +73,8 @@ You need a `config.json` file like this:
 ### ▶️ How to Use
 
 1. **Start LM Studio and enable the API server.**
-2. **Run the categorizer:**
+2. **Adjust the configuration file**
+3. **Run the categorizer:**
 
 ```bash
 python Categorizer.py
