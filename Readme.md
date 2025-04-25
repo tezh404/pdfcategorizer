@@ -30,13 +30,6 @@ Install required libraries:
 pip install -r requirements.txt
 ```
 
-**`requirements.txt` content:**
-
-```text
-PyMuPDF==1.24.2
-requests
-```
-
 ---
 
 ### ⚙️ Configuration File
