@@ -1,0 +1,4 @@
+
+PyMuPDF==1.25.5
+PyPDF2==3.0.1
+requests==2.32.3
