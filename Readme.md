@@ -15,7 +15,7 @@ This tool uses **LM Studio** as a local LLM backend.
 
 #### To enable the API in LM Studio:
 1. Launch LM Studio.
-2. Load your model (e.g., `phi3`, `mistral`, etc.)
+2. Load your model (e.g., `gemma-3`, `mistral`, etc.)
 3. Go to **Server** tab.
 4. Copy the **Model name** and place it in your `config.json`.
 5. Copy the **API URL** (e.g., `http://localhost:1234/v1/chat/completions`) and place it in your `config.json`.

@@ -25,6 +25,18 @@ def read_json_file(json_file_path):
         print(f"Error reading JSON file: {e}")
         return []
 
+# Generate a unique filename if file already exists
+def get_unique_filename(folder, filename):
+    base, ext = os.path.splitext(filename)
+    counter = 1
+    new_filename = filename
+
+    while os.path.exists(os.path.join(folder, new_filename)):
+        new_filename = f"{base} ({counter}){ext}"
+        counter += 1
+
+    return new_filename
+
 # Organize files into folders by category
 def organize_files_by_category():
     config = load_config()
@@ -46,7 +58,6 @@ def organize_files_by_category():
 
         old_path = os.path.join(source_folder, file_name)
         category_folder = os.path.join(source_folder, category)
-        new_path = os.path.join(category_folder, file_name)
 
         if not os.path.exists(old_path):
             print(f"File not found: {old_path}")
@@ -60,9 +71,13 @@ def organize_files_by_category():
                 print(f"Failed to create category folder: {e}")
                 continue
 
+        # Ensure unique filename
+        new_filename = get_unique_filename(category_folder, file_name)
+        new_path = os.path.join(category_folder, new_filename)
+
         try:
             shutil.move(old_path, new_path)
-            print(f"{file_name} -> moved to '{category}' folder.")
+            print(f"{file_name} -> moved to '{category}' folder as '{new_filename}'.")
         except Exception as e:
             print(f"Failed to move {file_name}: {e}")
 
