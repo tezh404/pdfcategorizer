@@ -1,5 +1,5 @@
 ### 📂 Categorizer & Organizer PDF file by AI
-****Bonus:** Markdown File (.md) Categorizer
+**Bonus:** Markdown File (.md) Categorizer
 
 This project contains **two separate Python modules**:
 
