@@ -1,4 +1,5 @@
 ### 📂 Categorizer & Organizer PDF file by AI
+****Bonus:** Markdown File (.md) Categorizer
 
 This project contains **two separate Python modules**:
 
@@ -81,6 +82,20 @@ python Categorizer.py
 ```
 
 This will create `pdf_file_info.json`.
+
+3. **Run the organizer:**
+
+```bash
+python Organizer.py
+```
+### Markdown Organizer
+
+1. **Run the categorizer:**
+
+```bash
+python mdCategorizer.py
+```
+This will create `md_file_info.json`. then, Adjust the configuration file `"json_path": "Path/md_file_info.json"`
 
 3. **Run the organizer:**
 
