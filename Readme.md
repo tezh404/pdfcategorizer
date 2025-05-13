@@ -53,7 +53,7 @@ You need a `config.json` file like this:
 
 ### 📁 Module 1: PDF Categorizer
 
-**Location:** `Categorizer.py`  
+**Location:** `pdfCategorizer.py`  
 **Function:**  
 - Reads all PDFs in the given folder.
 - Extracts title and first N pages.
@@ -78,7 +78,7 @@ You need a `config.json` file like this:
 3. **Run the categorizer:**
 
 ```bash
-python Categorizer.py
+python pdfCategorizer.py
 ```
 
 This will create `pdf_file_info.json`.
