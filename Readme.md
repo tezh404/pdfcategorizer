@@ -1,5 +1,5 @@
 ### 📂 Categorizer & Organizer PDF file by AI
-**Bonus:** Markdown File (.md) Categorizer
+**Bonus:** Markdown File (.md) & image Categorizer
 
 This project contains **two separate Python modules**:
 
@@ -96,6 +96,23 @@ python Organizer.py
 python mdCategorizer.py
 ```
 This will create `md_file_info.json`. then, Adjust the configuration file `"json_path": "Path/md_file_info.json"`
+
+3. **Run the organizer:**
+
+```bash
+python Organizer.py
+```
+### Img Organizer
+⚠️ **Important Notice:** 
+
+- You need to use a **model capable of processing images**, such as gemma-3-12b-4b.
+
+1. **Run the categorizer:**
+
+```bash
+python imgCategorizer.py
+```
+This will create `img_file_info.json`. then, Adjust the configuration file `"json_path": "Path/img_file_info.json"`
 
 3. **Run the organizer:**
 
