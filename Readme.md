@@ -1,31 +1,25 @@
-### 📂 Categorizer & Organizer PDF file by AI
-**Bonus:** Markdown File (.md) & image Categorizer
+### 📂 AI-Powered File Categorizer & Organizer
 
-This project contains **two separate Python modules**:
+**Supports:** PDF, Markdown (.md), and Images 🧠
 
-1. **Categorizer** – Reads the pages of a PDF file up to the desired number of pages., extracts text and metadata, and uses an LLM API to generate a category (e.g., "Engineering", "Computer"). You can improve the model's categorization by tweaking the prompt.
-2. **Organizer** – Organizes your PDF files into folders based on the predicted category from a generated JSON file.
+This project uses **local LLMs (via LM Studio)** to categorize files (PDFs, Markdown, and Images), then organizes them into folders based on their content.
 
 ---
 
 ### 🧠 Powered by LM Studio (Local AI)
 
-This tool uses **LM Studio** as a local LLM backend.
-
-> ⚠️ **Important:** Make sure LM Studio is running and a model is actively served through the **OpenAI-compatible API server**.
+Make sure **LM Studio** is running and a model is served using the **OpenAI-compatible API**.
 
 #### To enable the API in LM Studio:
+
 1. Launch LM Studio.
-2. Load your model (e.g., `gemma-3`, `mistral`, etc.)
-3. Go to **Server** tab.
-4. Copy the **Model name** and place it in your `config.json`.
-5. Copy the **API URL** (e.g., `http://localhost:1234/v1/chat/completions`) and place it in your `config.json`.
+2. Load a model (e.g., `gemma-3`, `mistral`, etc.).
+3. Go to the **Server** tab.
+4. Copy the **model name** and **API URL**, and add them to your `config.json`.
 
 ---
 
 ### 🔧 Requirements
-
-Install required libraries:
 
 ```bash
 pip install -r requirements.txt
@@ -33,14 +27,12 @@ pip install -r requirements.txt
 
 ---
 
-### ⚙️ Configuration File
-
-You need a `config.json` file like this:
+### ⚙️ Configuration (`config.json`)
 
 ```json
 {
-    "path": "path-pdf-files",
-    "json_path": "Path/pdf_file_info.json",
+    "path": "path-to-your-files",
+    "json_path": "Path/output_file_info.json",
     "pages": 3,
     "model_name": "your-model-name",
     "api_url": "http://localhost:1234/v1/chat/completions",
@@ -51,71 +43,60 @@ You need a `config.json` file like this:
 
 ---
 
-### 📁 Module 1: PDF Categorizer
+### 📁 Step 1: Categorize Files
 
-**Location:** `pdfCategorizer.py`  
-**Function:**  
-- Reads all PDFs in the given folder.
-- Extracts title and first N pages.
-- Sends a prompt to LM Studio's API.
-- Saves results in `pdf_file_info.json`.
+Run one or more of the following categorizers depending on the file type:
 
----
-
-### 📁 Module 2: File Organizer
-
-**Location:** `Organizer.py`  
-**Function:**  
-- Reads `pdf_file_info.json`.
-- Moves each file into its respective category folder.
-
----
-
-### ▶️ How to Use
-
-1. **Start LM Studio and enable the API server.**
-2. **Adjust the configuration file**
-3. **Run the categorizer:**
+#### 📄 PDF Files
 
 ```bash
 python pdfCategorizer.py
 ```
 
-This will create `pdf_file_info.json`.
+→ Generates `pdf_file_info.json`
 
-3. **Run the organizer:**
-
-```bash
-python Organizer.py
-```
-### Markdown Organizer
-
-1. **Run the categorizer:**
+#### 📝 Markdown Files
 
 ```bash
 python mdCategorizer.py
 ```
-This will create `md_file_info.json`. then, Adjust the configuration file `"json_path": "Path/md_file_info.json"`
 
-3. **Run the organizer:**
+→ Generates `md_file_info.json`
 
-```bash
-python Organizer.py
-```
-### Img Organizer
-⚠️ **Important Notice:** 
+#### 🖼️ Image Files
 
-- You need to use a **model capable of processing images**, such as gemma-3-12b-4b.
-
-1. **Run the categorizer:**
+⚠️ Requires a model that supports image input (e.g., `gemma-3-12b-4b`)
 
 ```bash
 python imgCategorizer.py
 ```
-This will create `img_file_info.json`. then, Adjust the configuration file `"json_path": "Path/img_file_info.json"`
 
-3. **Run the organizer:**
+→ Generates `img_file_info.json`
+
+---
+
+### 📂 Step 2: Organize Files
+
+After categorizing, set `"json_path"` in your `config.json` to the relevant `.json` file created, then run:
 
 ```bash
 python Organizer.py
 ```
+
+Files will be moved into folders based on their detected category.
+
+---
+
+### ✅ Example Workflow
+
+1. Start LM Studio and load your model.
+2. Categorize files:
+
+   * `python pdfCategorizer.py`
+   * `python mdCategorizer.py`
+   * `python imgCategorizer.py`
+3. Run the organizer for each JSON output:
+
+   * Update `json_path` to match (`pdf_file_info.json`, etc.)
+   * `python Organizer.py`
+
