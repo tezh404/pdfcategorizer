@@ -1,6 +1,6 @@
 ### 📂 AI-Powered File Categorizer & Organizer
 
-**Supports:** PDF, Markdown (.md), and Images 🧠
+**Supports:** PDF, Markdown (.md), and Images 
 
 This project uses **local LLMs (via LM Studio)** to categorize files (PDFs, Markdown, and Images), then organizes them into folders based on their content.
 
@@ -65,7 +65,7 @@ python mdCategorizer.py
 
 #### 🖼️ Image Files
 
-⚠️ Requires a model that supports image input (e.g., `gemma-3-12b-4b`)
+⚠️ Requires a model that supports image input (e.g., `gemma-3-12b or gemma-3-4b`)
 
 ```bash
 python imgCategorizer.py
