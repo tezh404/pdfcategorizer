@@ -1,4 +1,4 @@
-### 📂 AI-Powered File Categorizer & Organizer
+### 📂 AI-Powered Document Categorizer & Organizer
 
 **Supports:** PDF, Markdown (.md), and Images 
 
