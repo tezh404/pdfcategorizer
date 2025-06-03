@@ -29,6 +29,8 @@ pip install -r requirements.txt
 
 ### ⚙️ Configuration (`config.json`)
 
+>⚠️ **change** the name of the **config.example.json** to **config.json**
+
 ```json
 {
     "path": "path-to-your-files",
