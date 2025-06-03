@@ -1,0 +1,5 @@
+# Ignore directories
+config.json
+pdf_file_info.json
+img_file_info.json
+md_file_info.json
